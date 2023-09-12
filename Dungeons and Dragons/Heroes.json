@@ -1,0 +1,259 @@
+{
+  "Characters": [
+    {
+      "Class": "Fighter",
+      "HitPoints": 100,
+      "Abilities": [
+        {
+          "Name": "Melee Attack",
+          "Description": "Swing your weapon at a target in close combat.",
+          "Damage": "1d8 slashing damage"
+        },
+        {
+          "Name": "Ranged Attack",
+          "Description": "Shoot your ranged weapon at a distant target.",
+          "Damage": "1d6 piercing damage"
+        },
+        {
+          "Name": "Power Strike",
+          "Description": "Deliver a powerful melee attack with increased damage.",
+          "Damage": "2d10 slashing damage",
+          "Effect": "Exhausted for 1 turn after use"
+        }
+      ]
+    },
+    {
+      "Class": "Wizard",
+      "HitPoints": 80,
+      "Abilities": [
+        {
+          "Name": "Magic Missile",
+          "Description": "Unleash a dart of magical energy that never misses its target.",
+          "Damage": "1d4+1 force damage per dart"
+        },
+        {
+          "Name": "Fireball",
+          "Description": "Create a fiery explosion at a location, damaging all in the area.",
+          "Damage": "8d6 fire damage",
+          "Effect": "Area of effect damage"
+        },
+        {
+          "Name": "Teleport",
+          "Description": "Instantly transport yourself to a location you can see.",
+          "Effect": "No damage, teleportation ability"
+        }
+      ]
+    },
+    {
+      "Class": "Rogue",
+      "HitPoints": 90,
+      "Abilities": [
+        {
+          "Name": "Sneak Attack",
+          "Description": "Exploit an enemy's distraction to make a deadly strike.",
+          "Damage": "2d6 piercing damage (additional damage if conditions are met)"
+        },
+        {
+          "Name": "Evasion",
+          "Description": "Dodge out of harm's way, taking no damage on a successful saving throw.",
+          "Effect": "Avoids damage on a successful saving throw"
+        },
+        {
+          "Name": "Lockpicking",
+          "Description": "Skillfully open locks and disarm traps.",
+          "Effect": "No damage, utility skill"
+        }
+      ]
+    },
+    {
+      "Class": "Barbarian",
+      "HitPoints": 110,
+      "Abilities": [
+        {
+          "Name": "Rage",
+          "Description": "Enter a furious rage, gaining increased strength and resistance to damage.",
+          "Effect": "Bonus damage, resistance to bludgeoning, piercing, and slashing damage"
+        },
+        {
+          "Name": "Reckless Attack",
+          "Description": "Throw aside all concern for defense to attack with fierce desperation.",
+          "Effect": "Advantage on melee attack rolls, enemies gain advantage on attacks against you"
+        },
+        {
+          "Name": "Frenzy",
+          "Description": "Attack with wild abandon, making an additional attack on your turn.",
+          "Effect": "Extra melee attack per turn, exhaustion after use"
+        }
+      ]
+    },
+    {
+      "Class": "Bard",
+      "HitPoints": 85,
+      "Abilities": [
+        {
+          "Name": "Bardic Inspiration",
+          "Description": "Inspire an ally with words or music, granting them a bonus on ability checks, attack rolls, or saving throws.",
+          "Effect": "Bonus to ability checks, attack rolls, or saving throws"
+        },
+        {
+          "Name": "Charm Person",
+          "Description": "Magically charm a humanoid, making them friendly towards you.",
+          "Effect": "Target becomes friendly towards you for a duration"
+        },
+        {
+          "Name": "Countercharm",
+          "Description": "Use music or words to disrupt mind-influencing effects on yourself and allies.",
+          "Effect": "Advantage on saving throws against fear, charm, or other mind-affecting effects"
+        }
+      ]
+    },
+    {
+      "Class": "Cleric",
+      "HitPoints": 95,
+      "Abilities": [
+        {
+          "Name": "Healing Word",
+          "Description": "Invoke divine energy to heal an ally's wounds.",
+          "Effect": "Heals a target for a certain amount of hit points"
+        },
+        {
+          "Name": "Turn Undead",
+          "Description": "Channel your deity's power to drive away undead creatures.",
+          "Effect": "Forces undead to flee or be destroyed"
+        },
+        {
+          "Name": "Divine Smite",
+          "Description": "Infuse your weapon with holy energy, dealing extra damage to fiends and undead.",
+          "Effect": "Additional radiant damage to fiends and undead"
+        }
+      ]
+    },
+    {
+      "Class": "Druid",
+      "HitPoints": 90,
+      "Abilities": [
+        {
+          "Name": "Wild Shape",
+          "Description": "Transform into an animal form, gaining its abilities.",
+          "Effect": "Assume the form and abilities of a beast"
+        },
+        {
+          "Name": "Entangle",
+          "Description": "Cause plants in an area to ensnare creatures, restraining them.",
+          "Effect": "Restrains creatures in an area"
+        },
+        {
+          "Name": "Call Lightning",
+          "Description": "Summon a bolt of lightning to strike a target from the sky.",
+          "Effect": "Lightning damage to a target"
+        }
+      ]
+    },
+    {
+      "Class": "Monk",
+      "HitPoints": 80,
+      "Abilities": [
+        {
+          "Name": "Flurry of Blows",
+          "Description": "Unleash a rapid series of unarmed strikes against a target.",
+          "Effect": "Two extra unarmed strikes as a bonus action"
+        },
+        {
+          "Name": "Patient Defense",
+          "Description": "Focus on defense, allowing you to dodge attacks more effectively.",
+          "Effect": "Dodge action as a bonus action"
+        },
+        {
+          "Name": "Stunning Strike",
+          "Description": "Deliver a stunning blow to incapacitate a target temporarily.",
+          "Effect": "Target must make a saving throw or be stunned"
+        }
+      ]
+    },
+    {
+      "Class": "Paladin",
+      "HitPoints": 105,
+      "Abilities": [
+        {
+          "Name": "Lay on Hands",
+          "Description": "Use your healing touch to restore hit points to a creature.",
+          "Effect": "Heals a target for a certain amount of hit points"
+        },
+        {
+          "Name": "Divine Smite",
+          "Description": "Infuse your weapon with holy energy, dealing extra damage to fiends and undead.",
+          "Effect": "Additional radiant damage to fiends and undead"
+        },
+        {
+          "Name": "Aura of Protection",
+          "Description": "Radiate an aura that adds a bonus to saving throws for yourself and nearby allies.",
+          "Effect": "Bonus to saving throws for self and nearby allies"
+        }
+      ]
+    },
+    {
+      "Class": "Ranger",
+      "HitPoints": 95,
+      "Abilities": [
+        {
+          "Name": "Hunter's Mark",
+          "Description": "Mark a target, gaining extra damage against them and tracking their location.",
+          "Effect": "Additional damage to a marked target, tracking ability"
+        },
+        {
+          "Name": "Animal Companion",
+          "Description": "Befriend and train a loyal animal companion to aid you in battle.",
+          "Effect": "Summons an animal companion to assist in combat"
+        },
+        {
+          "Name": "Evasion",
+          "Description": "Dodge out of harm's way, taking no damage on a successful saving throw.",
+          "Effect": "Avoids damage on a successful saving throw"
+        }
+      ]
+    },
+    {
+      "Class": "Sorcerer",
+      "HitPoints": 85,
+      "Abilities": [
+        {
+          "Name": "Magic Missile",
+          "Description": "Unleash a dart of magical energy that never misses its target.",
+          "Damage": "1d4+1 force damage per dart"
+        },
+        {
+          "Name": "Fireball",
+          "Description": "Create a fiery explosion at a location, damaging all in the area.",
+          "Damage": "8d6 fire damage",
+          "Effect": "Area of effect damage"
+        },
+        {
+          "Name": "Teleport",
+          "Description": "Instantly transport yourself to a location you can see.",
+          "Effect": "No damage, teleportation ability"
+        }
+      ]
+    },
+    {
+      "Class": "Warlock",
+      "HitPoints": 85,
+      "Abilities": [
+        {
+          "Name": "Eldritch Blast",
+          "Description": "Project a beam of eldritch energy at a target.",
+          "Damage": "1d10 force damage"
+        },
+        {
+          "Name": "Hex",
+          "Description": "Place a curse on a target, making them more vulnerable to your attacks.",
+          "Effect": "Target has disadvantage on ability checks tied to a chosen ability"
+        },
+        {
+          "Name": "Pact of the Chain",
+          "Description": "Form a pact with a celestial, fiend, or fey, gaining a loyal familiar.",
+          "Effect": "Summons a familiar to assist in various ways"
+        }
+      ]
+    }
+  ]
+}
