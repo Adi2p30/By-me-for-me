@@ -5,14 +5,14 @@ import random
 import os
 import time
 
-# Set up the YTMusic API client
+
 ytmusic = YTMusic()
 
 
 def get_playlist_tracks(playlist_id):
     """Fetches all the tracks from a YouTube Music playlist."""
     playlist = ytmusic.get_playlist(playlist_id)
-    tracks = [track['videoId'] for track in playlist['tracks']]
+    tracks = [track["videoId"] for track in playlist["tracks"]]
     return tracks
 
 
@@ -51,10 +51,11 @@ def start_game():
         play_random_song(playlist_tracks, played_songs, team1, team2)
         print("------------------------------")
 
-    scores_label.config(text=f"Final Scores: {team1}: {scores[team1]}    {team2}: {scores[team2]}")
+    scores_label.config(
+        text=f"Final Scores: {team1}: {scores[team1]}    {team2}: {scores[team2]}"
+    )
 
 
-# Replace YOUR_PLAYLIST_ID with your YouTube Music playlist ID
 playlist_id = "PLhdJ9tvhgCPLdP47rqgbkBqbJ_Gaw5qZc"
 playlist_tracks = get_playlist_tracks(playlist_id)
 

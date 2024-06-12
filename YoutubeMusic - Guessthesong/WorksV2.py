@@ -1,4 +1,4 @@
-#Added Time and No Repition Functionality
+# Added Time and No Repition Functionality
 import time
 import webbrowser
 from ytmusicapi import YTMusic
@@ -8,10 +8,12 @@ import os
 
 ytmusic = YTMusic()
 
+
 def get_playlist_tracks(playlist_id):
     playlist = ytmusic.get_playlist(playlist_id)
-    tracks = [track['videoId'] for track in playlist['tracks']]
+    tracks = [track["videoId"] for track in playlist["tracks"]]
     return tracks
+
 
 def play_random_song(tracks, played_songs, team1, team2):
     time.sleep(1)
@@ -36,9 +38,7 @@ def play_random_song(tracks, played_songs, team1, team2):
     played_songs.append(random_song)
 
 
-
-
-#Replace YOUR_PLAYLIST_ID with your youtube music playlists ID
+# Replace YOUR_PLAYLIST_ID with your youtube music playlists ID
 playlist_id = "PLhdJ9tvhgCPLdP47rqgbkBqbJ_Gaw5qZc"
 playlist_tracks = get_playlist_tracks(playlist_id)
 
