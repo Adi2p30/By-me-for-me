@@ -34,7 +34,7 @@ https://www.wattpad.com/api/v3/stories/{{story_id}}?drafts=0&mature=1&include_de
 
 def get_chapter_id(url):
     """Extracts the chapter ID from the given URL."""
-    search_id = re.compile(r'\d{5,}')
+    search_id = re.compile(r"\d{5,}")
     id_match = search_id.search(url)
     if id_match:
         return id_match.group()
@@ -44,7 +44,7 @@ def get_chapter_id(url):
 def download_webpage(url):
     """Downloads the webpage content from the given URL."""
     try:
-        res = requests.get(url, headers={'User-Agent': 'Mozilla/5.0'})
+        res = requests.get(url, headers={"User-Agent": "Mozilla/5.0"})
         res.raise_for_status()
         return res.text
     except requests.exceptions.RequestException as exc:
@@ -54,33 +54,40 @@ def download_webpage(url):
 
 def extract_useful_data(json_data):
     """Extracts useful data from the JSON response."""
-    summary = json_data.get('description', '')
-    tags = json_data.get('tags', '')
-    chapters = json_data.get('parts', '')
-    storyName = json_data.get('title', '')
-    author = json_data.get('user', '')
-    cover = json_data.get('cover', '')
+    summary = json_data.get("description", "")
+    tags = json_data.get("tags", "")
+    chapters = json_data.get("parts", "")
+    storyName = json_data.get("title", "")
+    author = json_data.get("user", "")
+    cover = json_data.get("cover", "")
     return summary, tags, chapters, storyName, author, cover
+
 
 def beautifyandprint(file_name, story_name, author, cover, tags, summary, chapters):
     for i, chapter in enumerate(chapters):
         chapter_url = base_apiV2_url + f"storytext?id={chapter['id']}"
         chapter_content = download_webpage(chapter_url)
         if chapter_content:
-            soup_res = bs4.BeautifulSoup(chapter_content, 'html.parser')
-            print({chapter['title']} +"\n\n" + soup_res.prettify())
+            soup_res = bs4.BeautifulSoup(chapter_content, "html.parser")
+            print({chapter["title"]} + "\n\n" + soup_res.prettify())
+
 
 def save_epub_file(html_file, story_name, cover):
     """Converts the HTML file to EPUB format and saves it."""
     print("Generating EPUB...")
-    story_name = story_name.replace('/', ' ')
+    story_name = story_name.replace("/", " ")
     cover_image = f"{story_name}.jpg"
-    res_img = requests.get(cover, headers={'User-Agent': 'Mozilla/5.0'})
-    open(cover_image, 'wb').write(res_img.content)
+    res_img = requests.get(cover, headers={"User-Agent": "Mozilla/5.0"})
+    open(cover_image, "wb").write(res_img.content)
     output_file = f"{story_name}.epub"
 
-    pypandoc.convert_file(html_file, 'epub3', outputfile=output_file,
-                          extra_args=['--epub-chapter-level=2', f'--epub-cover-image={cover_image}'], sandbox=False)
+    pypandoc.convert_file(
+        html_file,
+        "epub3",
+        outputfile=output_file,
+        extra_args=["--epub-chapter-level=2", f"--epub-cover-image={cover_image}"],
+        sandbox=False,
+    )
 
     os.remove(cover_image)
     print(f"Saved {output_file}")
@@ -92,12 +99,18 @@ def main(storyid):
         print(dev_error_msg)
 
     # Getting JSON data from Wattpad API.
-    story_info_url = base_apiV3_url + f"stories/{story_id}?drafts=0&mature=1&include_deleted=1&fields=id,title,createDate,modifyDate,description,url,firstPublishedPart,cover,language,user(name,username,avatar,location,numStoriesPublished,numFollowing,numFollowers,twitter),completed,numParts,lastPublishedPart,parts(id,title,length,url,deleted,draft,createDate),tags,storyLanguage,copyright"
-    json_data = requests.get(story_info_url, headers={'User-Agent': 'Mozilla/5.0'}).json()
+    story_info_url = (
+        base_apiV3_url
+        + f"stories/{story_id}?drafts=0&mature=1&include_deleted=1&fields=id,title,createDate,modifyDate,description,url,firstPublishedPart,cover,language,user(name,username,avatar,location,numStoriesPublished,numFollowing,numFollowers,twitter),completed,numParts,lastPublishedPart,parts(id,title,length,url,deleted,draft,createDate),tags,storyLanguage,copyright"
+    )
+    json_data = requests.get(
+        story_info_url, headers={"User-Agent": "Mozilla/5.0"}
+    ).json()
     usefuljsondata = extract_useful_data(json_data)
     out_file = open("quotes.json", "w")
     json.dump(usefuljsondata, out_file, indent=1)
 
     usefuljsondata
+
 
 main("83999527")
